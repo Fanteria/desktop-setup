@@ -1,0 +1,17 @@
+[theme]
+primary = "#F8F8F2"
+secondary = "#8AE9FC"
+title = "#8AE9FC"
+playing = "#8AE9FC"
+playing_selected = "#FF0000"
+playing_bg = "#00000000"
+highlight = "#1E1F28"
+highlight_bg = "#8AE9FC"
+error = "#FF5555"
+error_bg = "#00000000"
+statusbar = "#F8F8F2"
+statusbar_progress = "#8AE9FC"
+statusbar_bg = "#00000000"
+cmdline = "#F8F8F2"
+cmdline_bg = "#444444"
+
