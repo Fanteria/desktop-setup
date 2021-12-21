@@ -187,6 +187,7 @@ bindsym $mod+shift+x exec i3lock -c 55667766 -i /home/jirka/Pictures/Pictures/Wa
 #--noinput-text="One does not simply walk into Mordor."
 
 bindsym $mod+p move workspace to output right 
+bindsym $mod+q exec keepmenu 
 
 exec feh --bg-scale /home/jirka/Pictures/Pictures/Wallpapers/bg2.jpg 
 exec redshift-qt
