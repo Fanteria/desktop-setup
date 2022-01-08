@@ -186,21 +186,24 @@ bindsym $mod+shift+x exec i3lock -c 55667766 -i /home/jirka/Pictures/Pictures/Wa
 #--noinput-text=`echo "There's nothing - no veil between me and the wheel of fire."`
 #--noinput-text="One does not simply walk into Mordor."
 
-bindsym $mod+p move workspace to output right 
+bindsym $mod+m move workspace to output right 
 bindsym $mod+q exec keepmenu 
+bindsym $mod+shift+p exec flameshot gui
+bindsym $mod+p exec import -window root "/home/jirka/Pictures/screenshots/`date +'screenshot_%d:%m:%Y_%H:%M:%S.png'`"
+
 
 exec feh --bg-scale /home/jirka/Pictures/Pictures/Wallpapers/bg2.jpg 
 exec redshift-qt
+exec flameshot
 
 exec_always xmodmap -e "keycode 133 = Alt_L"
 exec_always xmodmap -e "keycode 64 = Super_L"
 
 exec picom -b -C
 
-
 exec --no-startup-id i3-msg 'workspace $ws4; exec kitty ranger'
 exec --no-startup-id i3-msg 'workspace $ws3; exec kitty'
-exec --no-startup-id i3-msg 'workspace $ws9; exec kitty ncspot'
+exec --no-startup-id i3-msg 'workspace $ws9; exec kitty spt'
 exec --no-startup-id i3-msg 'workspace $ws9; exec kitty btop'
 exec --no-startup-id i3-msg 'workspace $ws2'
 exec --no-startup-id i3-msg 'workspace $ws1; exec vscodium'
