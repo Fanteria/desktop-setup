@@ -9,13 +9,13 @@ configuration {
 }
 
 * {
-    border-color:       #8ae9fc;
-    text-color:         #f8f8f2;
+    border-color:       #33963c;
+    text-color:         #f1f1f0;
     background-color:   transparent;
 }
 
 window {
-    background-color:   #1e1f28e0;
+    background-color:   #18151ae0;
     border:             0px;
     padding:            40%;
     width:              100%;
