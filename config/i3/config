@@ -213,6 +213,7 @@ exec --no-startup-id i3-msg 'workspace $ws8; exec discord'
 exec --no-startup-id i3-msg 'workspace $ws8; exec signal-desktop'
 
 assign [class="VSCodium"] $ws1
+for_window [class="VSCodium"] fullscreen enable 
 assign [class="Vivaldi-stable"] $ws2
 assign [class="discord"] $ws8
 assign [class="Signal"] $ws8
