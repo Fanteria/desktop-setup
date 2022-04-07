@@ -26,7 +26,7 @@ alias pingg='ping 8.8.8.8'
 alias school='cd /home/jirka/Projects/school/master/'
 alias offLaptopDisplay='xrandr --output eDP-1 --off'
 alias sortDiplays='xrandr --output HDMI-1 --rght-of eDP-1'
-alias gdiscsync='rclone sync Music gdisc:/Music && rclone sync Documents gdisc:/Documents && rclone sync Pictures/Pictures/DreamShitpost gdisc:/Pictures/Pictures/DreamShitpost && rclone sync Pictures/Pictures/Wallpapers/ gdisc:/Pictures/Pictures/Wallpaper'
+alias gdiscsync='rclone sync /home/jirka/Music gdisc:/Music && rclone sync /home/jirka/Documents gdisc:/Documents && rclone sync /home/jirka/Pictures/Pictures/DreamShitpost gdisc:/Pictures/Pictures/DreamShitpost && rclone sync /home/jirka/Pictures/Pictures/Wallpapers/ gdisc:/Pictures/Pictures/Wallpaper'
 
 
 # BEGIN_KITTY_SHELL_INTEGRATION
