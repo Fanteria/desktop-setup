@@ -5,15 +5,16 @@
 # If not running interactively, don't do anything
 [[ $- != *i* ]] && return
 
-
 powerline-daemon -q
 POWERLINE_BASH_CONTINUATION=1
 POWERLINE_BASH_SELECT=1
 bash /usr/share/powerline/bindings/shell/powerline.sh
 
+export EDITOR="/usr/bin/nvim"
+export VISUAL="/usr/bin/nvim"
+
 function _update_ps1() {
     PS1="$(powerline shell left)\n └── "
-    #PS1="$(powerline shell left)\n └── "
 }
 
 if [[ $TERM != linux && ! $PROMPT_COMMAND =~ _update_ps1 ]]; then
@@ -25,7 +26,8 @@ alias icat='kitty +kitten icat'
 alias pingg='ping 8.8.8.8'
 alias school='cd /home/jirka/Projects/school/master/'
 alias offLaptopDisplay='xrandr --output eDP-1 --off'
-alias sortDiplays='xrandr --output HDMI-1 --rght-of eDP-1'
+alias sortDisplays='xrandr --output HDMI-1 --left-of eDP-1'
+alias backlight='sudo xbacklight -set '
 alias gdiscsync='rclone sync /home/jirka/Music gdisc:/Music && rclone sync /home/jirka/Documents gdisc:/Documents && rclone sync /home/jirka/Pictures/Pictures/DreamShitpost gdisc:/Pictures/Pictures/DreamShitpost && rclone sync /home/jirka/Pictures/Pictures/Wallpapers/ gdisc:/Pictures/Pictures/Wallpaper'
 
 
