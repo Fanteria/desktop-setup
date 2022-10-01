@@ -29,6 +29,8 @@ alias offLaptopDisplay='xrandr --output eDP-1 --off'
 alias sortDisplays='xrandr --output HDMI-1 --left-of eDP-1'
 alias backlight='sudo xbacklight -set '
 alias gdiscsync='rclone sync /home/jirka/Music gdisc:/Music && rclone sync /home/jirka/Documents gdisc:/Documents && rclone sync /home/jirka/Pictures/Pictures/DreamShitpost gdisc:/Pictures/Pictures/DreamShitpost && rclone sync /home/jirka/Pictures/Pictures/Wallpapers/ gdisc:/Pictures/Pictures/Wallpaper'
+alias setEnv='export $(grep -v "^#" .env | xargs -d "\n")'
+alias unsetEnv='unset $(grep -v "^#" .env | sed -E "s/(.*)=.*/\1/" | xargs -d "\n")'
 
 
 # BEGIN_KITTY_SHELL_INTEGRATION
