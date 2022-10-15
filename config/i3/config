@@ -209,15 +209,16 @@ exec_always xmodmap -e "keycode 133 = Alt_L"
 exec_always xmodmap -e "keycode 64 = Super_L"
 
 exec picom -b -C
+exec sortDisplays
 
 exec --no-startup-id i3-msg 'workspace $ws1; exec kitty nvim'
 exec --no-startup-id i3-msg 'workspace $ws2; exec vivaldi-stable'
 exec --no-startup-id i3-msg 'workspace $ws3; exec kitty'
-exec --no-startup-id i3-msg 'workspace $ws4; exec kitty ranger'
+exec --no-startup-id i3-msg 'workspace $ws4; exec kitty --config ~/.config/kitty/transparent.conf ranger'
 exec --no-startup-id i3-msg 'workspace $ws8; exec discord'
 exec --no-startup-id i3-msg 'workspace $ws8; exec element-desktop'
-exec --no-startup-id i3-msg 'workspace $ws9; exec kitty spt'
-exec --no-startup-id i3-msg 'workspace $ws9; exec kitty btop'
+exec --no-startup-id i3-msg 'workspace $ws9; exec kitty --config ~/.config/kitty/transparent.conf spt'
+exec --no-startup-id i3-msg 'workspace $ws9; exec kitty --config ~/.config/kitty/transparent.conf btop'
 exec --no-startup-id i3-msg 'workspace $ws10; exec thunderbird'
 exec --no-startup-id i3-msg 'workspace $ws2'
 
