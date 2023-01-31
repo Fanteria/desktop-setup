@@ -1,77 +1,105 @@
+@import "~/.cache/wal/colors-rofi-dark.rasi"
+
 configuration {
 	modi: "run";
-	font: "DejaVu 12";
-/*	location: 0;*/
-/*	yoffset: 0;*/
-/*	xoffset: 0;*/
-/*	fixed-num-lines: true;*/
-/*	show-icons: false;*/
-/*	terminal: "rofi-sensible-terminal";*/
-/*	ssh-client: "ssh";*/
-/*	ssh-command: "{terminal} -e {ssh-client} {host} [-p {port}]";*/
-/*	run-command: "{cmd}";*/
-/*	run-list-command: "";*/
-/*	run-shell-command: "{terminal} -e {cmd}";*/
-/*	window-command: "wmctrl -i -R {window}";*/
-/*	window-match-fields: "all";*/
-/*	icon-theme: ;*/
-/*	drun-match-fields: "name,generic,exec,categories,keywords";*/
-/*	drun-categories: ;*/
-/*	drun-show-actions: false;*/
-/*	drun-display-format: "{name} [<span weight='light' size='small'><i>({generic})</i></span>]";*/
-/*	drun-url-launcher: "xdg-open";*/
-/*	disable-history: false;*/
-/*	ignored-prefixes: "";*/
-/*	sort: false;*/
-/*	sorting-method: "normal";*/
 	case-sensitive: false;
-/*	cycle: true;*/
-/*	sidebar-mode: false;*/
-/*	hover-select: false;*/
-/*	eh: 1;*/
-/*	auto-select: false;*/
-/*	parse-hosts: false;*/
-/*	parse-known-hosts: true;*/
+  font:               "DejaVu Mono Book 14";
+  fixed-num-lines:    true;
+  show-icons:         false;
+  sidebar-mode:       true;
+  scroll-method:      0;
+  click-to-exit:      true;
+  display-run:        "";
 	combi-modi: "drun,run";
-/*	matching: "normal";*/
-/*	tokenize: true;*/
-/*	m: "-5";*/
-/*	filter: ;*/
-/*	dpi: -1;*/
-/*	threads: 0;*/
-/*	scroll-method: 0;*/
-/*	window-format: "{w}    {c}   {t}";*/
-/*	click-to-exit: true;*/
-/*	theme: "fanteria_theme";*/
 	max-history-size: 20;
-/*	combi-hide-mode-prefix: false;*/
-/*	matching-negate-char: '-' /* unsupported */;*/
-/*	cache-dir: ;*/
-/*	window-thumbnail: false;*/
-/*	drun-use-desktop-cache: false;*/
-/*	drun-reload-desktop-cache: false;*/
-/*	normalize-match: false;*/
-/*	steal-focus: false;*/
-/*	application-fallback-icon: ;*/
-/*	display-window: ;*/
-/*	display-windowcd: ;*/
-/*	display-run: ;*/
-/*	display-ssh: ;*/
-/*	display-drun: ;*/
-/*	display-combi: ;*/
-/*	display-keys: ;*/
-/*	display-filebrowser: ;*/
-  timeout {
-      action: "kb-cancel";
-      delay:  0;
-  }
-  filebrowser {
-      directories-first: true;
-      sorting-method:    "name";
-  }
-  window {
-      transparency: "real";
-      fullscreen: true; 
-      background-color: #0A0B0DCC;
-  }
 }
+
+
+* {
+  background-color:   @color-background;
+  border-color:       @color-primary;
+  text-color:         @color-foreground;
+  foreground:         @color-background;
+}
+
+
+filebrowser {
+    directories-first: true;
+    sorting-method:    "name";
+}
+
+timeout {
+    action: "kb-cancel";
+    delay:  0;
+}
+
+window {
+    border:             0px;
+    padding:            40%;
+    width:              100%;
+    height:             100%;
+    fullscreen:         true; 
+    background-color:   @color-background;
+}
+
+mainbox {
+    spacing:            0px;
+    children:           [inputbar, message, listview];
+}
+
+inputbar {
+    spacing:            0px;
+    border:             2px;
+    padding:            3px;
+    border-radius:      5px;
+    border-color:       @color-primary;
+    text-color:         @color-background;
+}
+
+listview {
+    columns:            1;
+    fixed-height:       0;
+    scrollbar:          false;
+    padding:            3% 0px 0% 0px;
+}
+
+prompt {
+    spacing:    0;
+    text-color: @color-foreground;
+}
+
+entry {
+    spacing:    0;
+    text-color: @color-foreground;
+}
+
+element {
+    padding:          0px 0px 0px 0.5%;
+    border:           0;
+}
+
+element.normal.normal {
+    background-color: @color-background;
+    text-color:       @color-foreground;
+}
+
+element.alternate.normal {
+    background-color: @color-background;
+    text-color:       @color-foreground;
+}
+
+element.selected.normal {
+    background-color: @color-background;
+    text-color:       @color-foreground;
+}
+
+element text {
+    border: 0;
+    padding: 0;
+}
+
+element selected {
+    border:             0px 0px 0px 5px;
+    border-color:       @color-primary;
+}
+

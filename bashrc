@@ -12,6 +12,9 @@ bash /usr/share/powerline/bindings/shell/powerline.sh
 
 export EDITOR="/usr/bin/nvim"
 export VISUAL="/usr/bin/nvim"
+export TERM=xterm
+
+(cat ~/.cache/wal/sequences &)
 
 function _update_ps1() {
     PS1="$(powerline shell left)\n └── "
@@ -28,11 +31,12 @@ alias school='cd /home/jirka/Projects/school/master/'
 alias offLaptopDisplay='xrandr --output eDP-1 --off'
 alias sortDisplays='xrandr --output HDMI-1 --left-of eDP-1'
 alias backlight='sudo xbacklight -set '
-alias gdiscsync='rclone sync /home/jirka/Music gdisc:/Music && rclone sync /home/jirka/Documents gdisc:/Documents && rclone sync /home/jirka/Pictures/Pictures/DreamShitpost gdisc:/Pictures/Pictures/DreamShitpost && rclone sync /home/jirka/Pictures/Pictures/Wallpapers/ gdisc:/Pictures/Pictures/Wallpaper'
+alias gdisksync='rclone sync /home/jirka/Music gdisc:/Music && rclone sync /home/jirka/Documents gdisc:/Documents && rclone sync /home/jirka/Pictures/Pictures/DreamShitpost gdisc:/Pictures/Pictures/DreamShitpost && rclone sync /home/jirka/Pictures/Pictures/Wallpapers/ gdisc:/Pictures/Pictures/Wallpaper'
 alias tkitty='kitty --config ~/.config/kitty/transparent.conf'
 alias setEnv='export $(grep -v "^#" .env | xargs -d "\n")'
 alias unsetEnv='unset $(grep -v "^#" .env | sed -E "s/(.*)=.*/\1/" | xargs -d "\n")'
 alias markdown2latex='python ~/Projects/markdown-to-latex/main.py'
+alias gcalt='./Projects/gcaltasks/main.py'
 alias cc='clear && cargo check'
 alias cr='cargo run'
 alias ct='cargo test'

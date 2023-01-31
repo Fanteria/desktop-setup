@@ -12,12 +12,12 @@ set $urg-bg-color	    #2f5536
 set $not-show		    #00FF00
 
 # window name colors
-# class			            border		    background	  text			        indicator
-client.focused          $bg-color	    $bg-color	    $text-color		    $not-show
-client.focused_inactive $bg-color     $bg-color	    $text-color		    $not-show
-client.unfocused        $bg-color	    $bg-color	    $inact-text-color	$not-show
-client.urgent           $urg-bg-color	$urg-bg-color	$inact-text-color	$not-show
-client.placeholder      $bg-color	    $bg-color	    $text-color		    $not-show
+# class			            border		    background	  text			        indicator child_border
+client.focused          $bg-color	    $bg-color	    $text-color		    $not-show #ffffff
+client.focused_inactive $bg-color     $bg-color	    $text-color		    $not-show $bg-color
+client.unfocused        $bg-color	    $bg-color	    $inact-text-color	$not-show $bg-color 
+client.urgent           $urg-bg-color	$urg-bg-color	$inact-text-color	$not-show $bg-color
+client.placeholder      $bg-color	    $bg-color	    $text-color		    $not-show $bg-color
 
 # Start XDG autostart .desktop files using dex. See also
 exec --no-startup-id dex --autostart --environment i3
@@ -52,7 +52,7 @@ bindsym $mod+Return exec kitty
 bindsym $mod+Shift+q kill
 
 # start rofi (dmenu alternative)
-bindsym $mod+d exec rofi -theme fanteria_theme -show run
+bindsym $mod+d exec rofi -show run
 
 # change focus
 bindsym $mod+h focus left
@@ -158,14 +158,18 @@ mode "resize" {
         bindsym $mod+r mode "default"
 }
 
+border_radius 10
+smart_borders on
+
 # Window focus undependent on mouse position
 focus_follows_mouse no
 
 # Remove all borders from window
 for_window [class="^.*"] border pixel 0
+for_window [title="^.*"] border pixel 0
 
 # Setup gaps around windows
-gaps inner 10
+gaps inner 8 
 gaps outer 13
 # Gaps enabled only for more than one window
 smart_gaps on
@@ -176,7 +180,7 @@ bar {
 	position top
 	mode hide
 	modifier $mod
-        status_command i3blocks -c /home/jirka/.config/i3/i3blocks.conf
+        status_command i3blocks -c ~/.config/i3/i3blocks.conf
 	colors {
 		background $bg-color
 		separator  #757575
@@ -188,7 +192,7 @@ bar {
 }
 
 # Setup screen lock
-bindsym $mod+shift+x exec i3lock -c 55667766 -i /home/jirka/Pictures/Pictures/Wallpapers/screen_lock_ring.png -C -B 8 --indicator --radius 260 --ring-width 10 --inside-color=00000000 --line-color=00000000 --ring-color=EC5B3200 --keyhl-color=FBD66Eaa --separator-color=00000000 --layout-color=00000000 --time-color=00000000 --date-color=00000000 --insidever-color=00000000 --ringver-color=00000000 --insidewrong-color=00000000 --bshl-color=EC5B32AA --ringwrong-color=EC5B32aa --verif-color=00000000 --wrong-color=EC5B32AA --modif-color=00000000 --wrong-text="You shall not pass!"  --noinput-text="Shall we get started precious?"
+bindsym $mod+shift+x exec i3lock -c 55667766 -i ~/Pictures/Pictures/Wallpapers/screen_lock_ring.png -C -B 8 --indicator --radius 260 --ring-width 10 --inside-color=00000000 --line-color=00000000 --ring-color=EC5B3200 --keyhl-color=FBD66Eaa --separator-color=00000000 --layout-color=00000000 --time-color=00000000 --date-color=00000000 --insidever-color=00000000 --ringver-color=00000000 --insidewrong-color=00000000 --bshl-color=EC5B32AA --ringwrong-color=EC5B32aa --verif-color=00000000 --wrong-color=EC5B32AA --modif-color=00000000 --wrong-text="You shall not pass!"  --noinput-text="Shall we get started precious?"
 
 #--line-color=FF640044
 #--verif-text="Mellon?"
@@ -196,33 +200,63 @@ bindsym $mod+shift+x exec i3lock -c 55667766 -i /home/jirka/Pictures/Pictures/Wa
 #--noinput-text="One does not simply walk into Mordor."
 
 bindsym $mod+m move workspace to output right 
+bindsym $mod+n move workspace to output up
 bindsym $mod+q exec keepmenu 
 bindsym $mod+shift+p exec flameshot gui
-bindsym $mod+p exec import -window root "/home/jirka/Pictures/screenshots/`date +'screenshot_%d:%m:%Y_%H:%M:%S.png'`"
+bindsym $mod+p exec import -window root "~/Pictures/screenshots/`date +'screenshot_%d:%m:%Y_%H:%M:%S.png'`"
 
 
-exec_always feh --bg-scale /home/jirka/Pictures/Pictures/Wallpapers/wp2861965-lord-of-the-rings-wallpaper-1920x1080.jpg 
+# exec_always feh --bg-scale ~/Pictures/Pictures/Wallpapers/wp2861965-lord-of-the-rings-wallpaper-1920x1080.jpg 
+# exec_always feh --bg-scale ~/Pictures/Pictures/Wallpapers/middle-earth-map.jpg
 exec redshift-qt
+exec owncloud
 exec flameshot
 
 exec_always xmodmap -e "keycode 133 = Alt_L"
 exec_always xmodmap -e "keycode 64 = Super_L"
 
 exec picom -b -C
-exec sortDisplays
 
 exec --no-startup-id i3-msg 'workspace $ws1; exec kitty nvim'
-exec --no-startup-id i3-msg 'workspace $ws2; exec vivaldi-stable'
+exec --no-startup-id i3-msg 'workspace $ws2; exec firefox'
 exec --no-startup-id i3-msg 'workspace $ws3; exec kitty'
 exec --no-startup-id i3-msg 'workspace $ws4; exec kitty --config ~/.config/kitty/transparent.conf ranger'
 exec --no-startup-id i3-msg 'workspace $ws8; exec discord'
-exec --no-startup-id i3-msg 'workspace $ws8; exec element-desktop'
-exec --no-startup-id i3-msg 'workspace $ws9; exec kitty --config ~/.config/kitty/transparent.conf spt'
-exec --no-startup-id i3-msg 'workspace $ws9; exec kitty --config ~/.config/kitty/transparent.conf btop'
+exec --no-startup-id i3-msg 'workspace $ws8; exec nheko'
 exec --no-startup-id i3-msg 'workspace $ws10; exec thunderbird'
-exec --no-startup-id i3-msg 'workspace $ws2'
+
+# exec --no-startup-id i3-msg "workspace $ws9; append_layout ~/.config/i3/ws.json"
+# exec --no-startup-id kitty --config ~/.config/kitty/transparent.conf btop
+# exec --no-startup-id "sleep 0.2; kitty --config ~/.config/kitty/transparent.conf /home/jirka/Projects/gcaltasks/main.py cal show"
+# exec --no-startup-id "sleep 0.4; kitty --config ~/.config/kitty/transparent.conf /home/jirka/Projects/gcaltasks/main.py task show"
+# exec --no-startup-id "sleep 0.6; kitty --config ~/.config/kitty/transparent.conf spt"
+exec --no-startup-id ~/.config/i3/set_layout.sh
+
+# exec --no-startup-id speep 1
+# exec --no-startup-id i3-msg "workspace $ws9; append_layout ~/ws.json"
+# exec --no-startup-id i3-msg "workspace $ws9; kitty --config ~/.config/kitty/transparent.conf btop"
+# exec --no-startup-id speep 1
+# exec --no-startup-id i3-msg "workspace $ws9; kitty --config ~/.config/kitty/transparent.conf /home/jirka/Projects/gcaltasks/main.py cal show"
+# exec --no-startup-id speep 1
+# exec --no-startup-id i3-msg "workspace $ws9; kitty --config ~/.config/kitty/transparent.conf /home/jirka/Projects/gcaltasks/main.py task show"
+# exec --no-startup-id speep 1
+# exec --no-startup-id i3-msg "workspace $ws9; kitty --config ~/.config/kitty/transparent.conf spt"
 
 assign [class="Vivaldi-stable"] $ws2
+assign [class="firefox"] $ws2
 assign [class="discord"] $ws8
+assign [class="nheko"] $ws8
 assign [class="Element"] $ws8
 assign [class="Thunderbird"] $ws10
+
+# Set workspaces to right monitors
+set $primary_screen eDP-1
+set $secondary_screen HDMI-1
+
+workspace $ws1 output $secondary_screen
+workspace $ws2 output $secondary_screen
+workspace $ws3 output $secondary_screen
+workspace $ws4 output $secondary_screen
+workspace $ws8 output $primary_screen
+workspace $ws9 output $primary_screen
+workspace $ws10 output $primary_screen
