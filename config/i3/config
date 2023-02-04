@@ -54,6 +54,9 @@ bindsym $mod+Shift+q kill
 # start rofi (dmenu alternative)
 bindsym $mod+d exec rofi -show run
 
+# start rofi watson interface
+bindsym $mod+t exec "~/.config/i3/rofi-watson.sh"
+
 # change focus
 bindsym $mod+h focus left
 bindsym $mod+j focus down
