@@ -16,7 +16,7 @@ while IFS= read -r i ; do
 done <<< "$PROJECTS"
 
 # Run rofi and save output
-SELECTION=`printf %b "$ALL_OPTIONS" | rofi -dmenu -p ""`
+SELECTION=`printf %b "$ALL_OPTIONS" | rofi -dmenu -p " "`
 
 # Exit if output is empty
 if [[ "$SELECTION" == "" ]] ; then
