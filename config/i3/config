@@ -99,16 +99,16 @@ bindsym $mod+e layout toggle split
 bindsym $mod+Shift+space floating toggle
 
 # Define names for default workspaces 
-set $ws1 "1: "
-set $ws2 "2: "
-set $ws3 "3: "
-set $ws4 "4: "
-set $ws5 "5"
-set $ws6 "6"
-set $ws7 "7"
-set $ws8 "8: "
-set $ws9 "9: " 
-set $ws10 "10: "
+set $ws1 "1:  "
+set $ws2 "2:  "
+set $ws3 "3:  "
+set $ws4 "4:  "
+set $ws5 "5:  "
+set $ws6 "6:  "
+set $ws7 "7:🎸"
+set $ws8 "8:  "
+set $ws9 "9:  " 
+set $ws10 "10:  "
 
 # switch to workspace
 bindsym $mod+1 workspace number $ws1
@@ -161,8 +161,8 @@ mode "resize" {
         bindsym $mod+r mode "default"
 }
 
-border_radius 10
-smart_borders on
+# border_radius 10
+# smart_borders on
 
 # Window focus undependent on mouse position
 focus_follows_mouse no
@@ -175,23 +175,32 @@ for_window [title="^.*"] border pixel 0
 gaps inner 8 
 gaps outer 13
 # Gaps enabled only for more than one window
-smart_gaps on
+# smart_gaps on
 
 # Start i3bar to display a workspace bar (plus the system information i3status
 # finds out, if available)
 bar {
 	position top
-	mode hide
+  mode hide
 	modifier $mod
-        status_command i3blocks -c ~/.config/i3/i3blocks.conf
+  i3bar_command i3bar -t
+  status_command i3blocks -c ~/.config/i3/i3blocks.conf
+  strip_workspace_numbers yes
 	colors {
-		background $bg-color
+		background #00000000
 		separator  #757575
-		# type              border              backgound	    text
-		focused_workspace   $bg-color           $bg-color	    $text-color
-		inactive_workspace  $inact-bg-color     $inact-bg-color	$inact-text-color
-		urgent_workspace    $urg-bg-color       $urg-bg-color	$inaxt-text-color
+		# type              border    backgound	text
+		focused_workspace   #00000000 #00000000	$text-color
+		inactive_workspace  #00000000 #00000000	$urg-bg-color
+		urgent_workspace    #00000000 #00000000	$inaxt-text-color
 	}
+  # colors{
+		# background $bg-color
+		# separator  #757575
+		# focused_workspace   $bg-color           $bg-color	    $text-color
+		# inactive_workspace  $inact-bg-color     $inact-bg-color	$inact-text-color
+		# urgent_workspace    $urg-bg-color       $urg-bg-color	$inaxt-text-color
+  # }
 }
 
 # Setup screen lock
@@ -209,9 +218,9 @@ bindsym $mod+shift+p exec flameshot gui
 bindsym $mod+p exec import -window root "~/Pictures/screenshots/`date +'screenshot_%d:%m:%Y_%H:%M:%S.png'`"
 
 # exec_always feh --bg-scale ~/Pictures/Pictures/Wallpapers/wp2861965-lord-of-the-rings-wallpaper-1920x1080.jpg 
-# exec_always feh --bg-scale ~/Pictures/Pictures/Wallpapers/middle-earth-map.jpg
+exec_always feh --bg-scale ~/Pictures/Pictures/Wallpapers/middle-earth-map.jpg
 exec redshift-qt
-exec owncloud
+# exec owncloud
 exec flameshot
 
 exec_always xmodmap -e "keycode 133 = Alt_L"
