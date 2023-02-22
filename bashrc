@@ -14,7 +14,7 @@ export EDITOR="/usr/bin/nvim"
 export VISUAL="/usr/bin/nvim"
 export TERM=xterm
 
-(cat ~/.cache/wal/sequences &)
+# (cat ~/.cache/wal/sequences &)
 
 function _update_ps1() {
     PS1="$(powerline shell left)\n └── "

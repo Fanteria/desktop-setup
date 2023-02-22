@@ -8,6 +8,6 @@ sleep 0.5
 sleep 0.5
 (kitty /home/jirka/Projects/gcaltasks/gcaltasks/main.py task show &)
 sleep 0.5
-(kitty spt &)
+(kitty ncspot &)
 
 # i3-save-tree --workspace 9 > ~/ws.json && sed -i 's|^\(\s*\)// "|\1"|g; /^\s*\/\//d' ~/ws.json
