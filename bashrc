@@ -24,7 +24,17 @@ if [[ $TERM != linux && ! $PROMPT_COMMAND =~ _update_ps1 ]]; then
     PROMPT_COMMAND="_update_ps1; $PROMPT_COMMAND"
 fi
 
+alias h='history'
+alias j='jobs -l'
 alias ls='ls --color=auto'
+alias ll='ls --color=auto -lh'
+alias la='ls --color=auto -lha'
+alias l.='ls --color=auto -a'
+alias ..='cd ..'
+alias ...='cd ../..'
+alias grep='grep --color=auto'
+alias egrep='egrep --color=auto'
+alias fgrep='fgrep --color=auto'
 alias icat='kitty +kitten icat'
 alias pingg='ping 8.8.8.8'
 alias school='cd /home/jirka/Projects/school/master/'
@@ -39,6 +49,23 @@ alias gcalt='python ~/Projects/gcaltasks/gcaltasks/main.py'
 alias cc='clear && cargo check'
 alias cr='cargo run'
 alias ct='cargo test'
+alias myIP='curl ifconfig.me && echo ""'
+
+# FUNCTIONS
+testColors() {
+MODULUS="${1:-16}"
+if ! [[ "$MODULUS" =~ ^[0-9]+$ ]] ; then
+    echo "Parameter must be a number."
+    return 1
+fi
+for CODE in {000..255} ; do 
+  echo -en "\e[30;48;5;${CODE}m ${CODE} " 
+  if [ `expr 16 - 1` -eq `expr ${CODE} % 16` ] ; then 
+    echo "" 
+  fi 
+done 
+echo -en "\e[0m"
+}
 
 # BEGIN_KITTY_SHELL_INTEGRATION
 if test -n "$KITTY_INSTALLATION_DIR" -a -e "$KITTY_INSTALLATION_DIR/shell-integration/bash/kitty.bash"; then source "$KITTY_INSTALLATION_DIR/shell-integration/bash/kitty.bash"; fi
