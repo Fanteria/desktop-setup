@@ -67,6 +67,19 @@ done
 echo -en "\e[0m"
 }
 
+git() {
+  case "$1" in
+    "squash")
+      if [ "$#" -ne 2 ] ; then
+        echo "Set number of local commits to squash."
+        return
+      fi
+      command git reset --soft "HEAD~$2" && git commit --edit -m"$(git log --format=%B --reverse HEAD..HEAD@{1})"
+      ;;
+    *)
+      command git $@ ;;
+}
+
 # BEGIN_KITTY_SHELL_INTEGRATION
 if test -n "$KITTY_INSTALLATION_DIR" -a -e "$KITTY_INSTALLATION_DIR/shell-integration/bash/kitty.bash"; then source "$KITTY_INSTALLATION_DIR/shell-integration/bash/kitty.bash"; fi
 # END_KITTY_SHELL_INTEGRATION
