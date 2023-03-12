@@ -78,6 +78,7 @@ git() {
       ;;
     *)
       command git $@ ;;
+  esac
 }
 
 # BEGIN_KITTY_SHELL_INTEGRATION
