@@ -76,8 +76,11 @@ git() {
       fi
       command git reset --soft "HEAD~$2" && git commit --edit -m"$(git log --format=%B --reverse HEAD..HEAD@{1})"
       ;;
+    "cm")
+      command git commit -m "${@:2}" ;;
+      # command git commit -m "$@" ;;
     *)
-      command git $@ ;;
+      command git "$@" ;;
   esac
 }
 
