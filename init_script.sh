@@ -22,6 +22,7 @@ for DIR in ${SCRIPT_DIR}/config/* ; do
   BASENAME="${HOME}/.config/$( basename $DIR )"
   [[ -f "${DIR}" ]] && create_link "${BASENAME}" "${DIR}" && continue
   [[ -d "${DIR}" ]] || continue
+  [[ -d "${BASENAME}" ]] || mkdir "${BASENAME}"
   for FILE in ${DIR}/* ; do
     create_link "${BASENAME}/$( basename ${FILE} )" "${FILE}"
   done
