@@ -200,7 +200,7 @@ bindsym $mod+q exec keepmenu
 bindsym $mod+shift+p exec flameshot gui
 bindsym $mod+p exec flameshot full
 
-exec_always feh --bg-scale ~/Pictures/Pictures/Wallpapers/middle-earth-map.jpg
+exec_always feh --bg-scale ~/Pictures/Pictures/Wallpaper/middle-earth-map.jpg
 exec redshift-qt
 # exec owncloud
 exec flameshot
