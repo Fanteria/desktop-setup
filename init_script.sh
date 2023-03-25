@@ -4,19 +4,21 @@ if [ -z "${HOME+x}" ] ; then echo "Var \$HOME must be set." ; exit 1 ; fi
 
 SCRIPT_DIR=$( cd -- "$( dirname -- "${BASH_SOURCE[0]}" )" &> /dev/null && pwd )
 
-# $1 source folder for links
-# $2 destination folder to create links
+create_link () {
+  [[ -f "$1" ]] && rm "$1"
+    ln -s "$2" "$1"
+    echo "$1 -> $2"
+}
+
 link_recursively () {
   for DIR in `ls "$1"` ; do
     FULL_PATH="${1}/$DIR"
     NEW_PATH="${2}/$DIR"
     if [[ -f "$FULL_PATH" ]] ; then
-      [[ -f "$NEW_PATH" ]] && rm "$NEW_PATH"
-      ln -s "$FULL_PATH" "$NEW_PATH"
-      echo "$FULL_PATH -> $NEW_PATH"
+      create_link "$NEW_PATH" "$FULL_PATH"
     elif [[ -d "$FULL_PATH" ]] ; then 
       [[ -d "$NEW_PATH" ]] || mkdir "$NEW_PATH"
-      links_in_dir "$FULL_PATH" "$NEW_PATH"
+      link_recursively "$FULL_PATH" "$NEW_PATH"
     fi
   done
 }
