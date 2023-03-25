@@ -1,4 +1,4 @@
-@import "~/.cache/wal/colors-rofi-dark.rasi"
+@import "./colors.rasi"
 
 configuration {
 	modi: "run";
