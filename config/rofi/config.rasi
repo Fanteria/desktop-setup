@@ -16,7 +16,7 @@ configuration {
 
 
 * {
-  background-color:   @color-background;
+  background-color:   #00000000;
   border-color:       @color-primary;
   text-color:         @color-foreground;
   foreground:         @color-background;
@@ -79,17 +79,17 @@ element {
 }
 
 element.normal.normal {
-    background-color: @color-background;
+    background-color: #00000000;
     text-color:       @color-foreground;
 }
 
 element.alternate.normal {
-    background-color: @color-background;
+    background-color: #00000000;
     text-color:       @color-foreground;
 }
 
 element.selected.normal {
-    background-color: @color-background;
+    background-color: #00000000;
     text-color:       @color-foreground;
 }
 
