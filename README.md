@@ -11,8 +11,13 @@ This repository contains config files for my desktop window manager and few anot
 
 - `.vimrc`
 - `btop`
+- `flameshot`
+- `keepmenu`
 - `i3`
+- `kitty`
 - `ncspot`
+- `powerline`
+- `ranger`
 - `redshift` (_is without lon and lat_)
 - `rofi`
 - `picom`
