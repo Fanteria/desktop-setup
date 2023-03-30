@@ -78,7 +78,30 @@ git() {
       ;;
     "cm")
       command git commit -m "${@:2}" ;;
-      # command git commit -m "$@" ;;
+    "all")
+      if [ "$#" -gt 3 ] ; then
+        echo "Too many arguments."
+        return
+      fi
+      DEPTH="2"
+      FIND_PATH="."
+      for ARG in "${@:2}" ; do
+        if [[ "$ARG" == "-"* ]] ; then
+          DEPTH="${ARG:1}"
+        else
+          FIND_PATH="$ARG"
+        fi
+      done
+      DEPTH=$(("$DEPTH" + 1))
+      WORKDIR="$PWD"
+      for REPOSITORY in `find "$FIND_PATH" -maxdepth "$DEPTH" -mindepth 1 -type d -name ".git"` ; do
+        DIRNAME="$(dirname $REPOSITORY)"
+        echo "$DIRNAME"
+        cd "$DIRNAME"
+        command git status -s
+        cd "$WORKDIR"
+      done 
+      ;;
     *)
       command git "$@" ;;
   esac
