@@ -26,7 +26,7 @@ exec --no-startup-id dex --autostart --environment i3
 
 # xss-lock grabs a logind suspend inhibit lock and will use i3lock to lock the
 # screen before suspend. Use loginctl lock-session to lock your screen.
-exec --no-startup-id xss-lock --transfer-sleep-lock -- i3lock --nofork
+# exec --no-startup-id xss-lock --transfer-sleep-lock -- i3lock --nofork
 
 # NetworkManager is the most popular way to manage wireless networks on Linux,
 # and nm-applet is a desktop environment-independent system tray GUI for it.
@@ -187,7 +187,8 @@ bar {
 }
 
 # Setup screen lock
-bindsym $mod+shift+x exec i3lock -c 55667766 -i ~/Pictures/Pictures/Wallpapers/screen_lock_ring.png -C -B 8 --indicator --radius 260 --ring-width 10 --inside-color=00000000 --line-color=00000000 --ring-color=EC5B3200 --keyhl-color=FBD66Eaa --separator-color=00000000 --layout-color=00000000 --time-color=00000000 --date-color=00000000 --insidever-color=00000000 --ringver-color=00000000 --insidewrong-color=00000000 --bshl-color=EC5B32AA --ringwrong-color=EC5B32aa --verif-color=00000000 --wrong-color=EC5B32AA --modif-color=00000000 --wrong-text="You shall not pass!"  --noinput-text="Shall we get started precious?"
+# bindsym $mod+shift+x exec i3lock -c 55667766 -i ~/Pictures/Pictures/Wallpapers/screen_lock_ring.png -C -B 8 --indicator --radius 260 --ring-width 10 --inside-color=00000000 --line-color=00000000 --ring-color=EC5B3200 --keyhl-color=FBD66Eaa --separator-color=00000000 --layout-color=00000000 --time-color=00000000 --date-color=00000000 --insidever-color=00000000 --ringver-color=00000000 --insidewrong-color=00000000 --bshl-color=EC5B32AA --ringwrong-color=EC5B32aa --verif-color=00000000 --wrong-color=EC5B32AA --modif-color=00000000 --wrong-text="You shall not pass!"  --noinput-text="Shall we get started precious?"
+bindsym $mod+shift+x exec dm-tool lock
 
 #--line-color=FF640044
 #--verif-text="Mellon?"
