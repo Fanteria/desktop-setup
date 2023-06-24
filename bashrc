@@ -52,6 +52,7 @@ alias cc='clear && cargo check'
 alias cr='cargo run'
 alias ct='cargo test'
 alias myIP='curl ifconfig.me && echo ""'
+alias view='nvim -R'
 
 # FUNCTIONS
 testColors() {
