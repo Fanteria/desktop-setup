@@ -29,3 +29,4 @@ find "${SCRIPT_DIR}" -iname "*rc" | while read FILE; do
 done
 
 link_recursively "${SCRIPT_DIR}/config" "${HOME}/.config"
+link_recursively "${SCRIPT_DIR}/cgdb" "${HOME}/.cgdb"
