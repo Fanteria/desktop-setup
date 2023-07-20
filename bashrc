@@ -51,6 +51,7 @@ alias gcalt='python ~/Projects/gcaltasks/gcaltasks/main.py'
 alias cc='clear && cargo check'
 alias cr='cargo run'
 alias ct='cargo test'
+alias ccc='clear && cargo clippy'
 alias myIP='curl ifconfig.me && echo ""'
 alias view='nvim -R'
 
