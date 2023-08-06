@@ -10,9 +10,11 @@ POWERLINE_BASH_CONTINUATION=1
 POWERLINE_BASH_SELECT=1
 bash /usr/share/powerline/bindings/shell/powerline.sh
 
+export PATH="$PATH:/home/jirka/.cargo/bin"
 export EDITOR="/usr/bin/nvim"
 export VISUAL="/usr/bin/nvim"
 export TERM=xterm
+export GOPATH="${HOME}/.go"
 
 # (cat ~/.cache/wal/sequences &)
 

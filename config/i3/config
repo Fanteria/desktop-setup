@@ -56,6 +56,9 @@ bindsym $mod+d exec rofi -show run
 # start rofi watson interface
 bindsym $mod+t exec "~/.config/i3/rofi-watson.sh"
 
+# start rofi shortcut-autotyper interface
+bindsym $mod+a exec "shortcut-autotyper `shortcut-autotyper -l | rofi -dmenu -p '  '`"
+
 # change focus
 bindsym $mod+h focus left
 bindsym $mod+j focus down
@@ -154,6 +157,8 @@ focus_follows_mouse no
 # Remove all borders from window
 for_window [class="^.*"] border pixel 0
 for_window [title="^.*"] border pixel 0
+for_window [class="Moje aplikace"] floating enable
+for_window [title="App"] floating enable
 
 # Setup gaps around windows
 gaps inner 8 
