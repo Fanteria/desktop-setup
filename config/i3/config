@@ -57,7 +57,7 @@ bindsym $mod+d exec rofi -show run
 bindsym $mod+t exec "~/.config/i3/rofi-watson.sh"
 
 # start rofi shortcut-autotyper interface
-bindsym $mod+a exec "shortcut-autotyper `shortcut-autotyper -l | rofi -dmenu -p '  '`"
+bindsym $mod+a exec "~/.config/i3/rofi-shortcut-autotyper.sh"
 
 # change focus
 bindsym $mod+h focus left
