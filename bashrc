@@ -13,6 +13,8 @@ bash /usr/share/powerline/bindings/shell/powerline.sh
 export PATH="$PATH:/home/jirka/.cargo/bin"
 export EDITOR="/usr/bin/nvim"
 export VISUAL="/usr/bin/nvim"
+export HISTCONTROL=ignoreboth
+export HISTSIZE=2000
 export TERM=xterm
 export GOPATH="${HOME}/.go"
 
