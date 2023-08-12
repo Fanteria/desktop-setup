@@ -1,5 +1,4 @@
-format = """
-$username$hostname$directory$rust$golang$terraform$python$nodejs$c$lua$git_branch$git_status$git_commit$git_metrics$git_state
+format = """ $username$hostname$directory$rust$golang$terraform$python$nodejs$c$lua$git_branch$git_status$git_commit$git_metrics$git_state
 $character
 """
 
@@ -50,10 +49,10 @@ disabled = false
 
 [git_status]
 format = "$all_status "
-confilicted = "[=$count](white)"
+conflicted = "[=$count](white)"
 ahead = "[$count](white)"
 behind = "[$count](white)"
-diverget = "[󰹹$count](white)"
+diverged = "[󰹹$count](white)"
 up_to_date = "A$count"
 untracked = "[ $count](yellow)"
 stashed = "S$count"
@@ -61,7 +60,7 @@ modified = "[ $count](blue) "
 staged = "[ $count](green) "
 renamed = "[$count](white)"
 deleted = "[$count](white)"
-typecahnged = ""
+typechanged = ""
 # + mod -
 
 [c]
