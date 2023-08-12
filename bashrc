@@ -5,10 +5,7 @@
 # If not running interactively, don't do anything
 [[ $- != *i* ]] && return
 
-powerline-daemon -q
-POWERLINE_BASH_CONTINUATION=1
-POWERLINE_BASH_SELECT=1
-bash /usr/share/powerline/bindings/shell/powerline.sh
+eval "$(starship init bash)"
 
 export PATH="$PATH:/home/jirka/.cargo/bin"
 export EDITOR="/usr/bin/nvim"
@@ -19,14 +16,6 @@ export TERM=xterm
 export GOPATH="${HOME}/.go"
 
 # (cat ~/.cache/wal/sequences &)
-
-function _update_ps1() {
-    PS1="$(powerline shell left)\n └── "
-}
-
-if [[ $TERM != linux && ! $PROMPT_COMMAND =~ _update_ps1 ]]; then
-    PROMPT_COMMAND="_update_ps1; $PROMPT_COMMAND"
-fi
 
 alias h='history'
 alias j='jobs -l'
