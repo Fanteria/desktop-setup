@@ -1,0 +1,84 @@
+format = """
+$username$hostname$directory$rust$golang$terraform$python$nodejs$c$lua$git_branch$git_status$git_commit$git_metrics$git_state
+$character
+"""
+
+[username]
+style_user = "green bold"
+style_root = "red bold"
+format = "[$user]($style) "
+disabled = false
+show_always = false
+
+[hostname]
+ssh_only = true
+format = '@[$hostname](yellow): '
+trim_at = "."
+disabled = false
+
+[character]
+success_symbol = "[❯](bold green)"
+error_symbol = "[✗](bold red)"
+
+[directory]
+read_only = ""
+truncation_length = 5
+truncation_symbol = ""
+truncate_to_repo = true
+style = "bold blue"
+
+[cmd_duration]
+format = "[$duration](white)"
+min_time = 4
+disabled = true
+style = "bold italic red"
+
+
+[git_branch]
+format = "[$symbol$branch](bold purple) "
+symbol = " "
+
+[git_commit]
+commit_hash_length = 5
+format = "[$hash ]($style)"
+style = "yellow"
+only_detached = false
+disabled = false
+
+[git_metrics]
+disabled = false
+
+[git_status]
+format = "$all_status "
+confilicted = "[=$count](white)"
+ahead = "[$count](white)"
+behind = "[$count](white)"
+diverget = "[󰹹$count](white)"
+up_to_date = "A$count"
+untracked = "[ $count](yellow)"
+stashed = "S$count"
+modified = "[ $count](blue) "
+staged = "[ $count](green) "
+renamed = "[$count](white)"
+deleted = "[$count](white)"
+typecahnged = ""
+# + mod -
+
+[c]
+format = "[  ](blue)"
+
+[golang]
+format = "[  ](blue)"
+
+[lua]
+format = "[  ](blue)"
+
+[python]
+format = "[  ](yellow)"
+
+[nodejs]
+format = "[󰎙  ](green)"
+
+[rust]
+format = "[  ](orange)"
+
