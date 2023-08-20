@@ -49,35 +49,35 @@ disabled = false
 
 [git_status]
 format = "$all_status "
-conflicted = "[=$count](white)"
-ahead = "[$count](white)"
-behind = "[$count](white)"
-diverged = "[󰹹$count](white)"
+conflicted = "[=$count](bold white)"
+ahead = "[$count](bold white)"
+behind = "[$count](bold white)"
+diverged = "[󰹹$count](bold white)"
 up_to_date = "A$count"
-untracked = "[ $count](yellow)"
+untracked = "[ $count](bold yellow)"
 stashed = "S$count"
-modified = "[ $count](blue) "
-staged = "[ $count](green) "
-renamed = "[$count](white)"
-deleted = "[$count](white)"
+modified = "[ $count](bold blue) "
+staged = "[ $count](bold green) "
+renamed = "[$count](bold white)"
+deleted = "[$count](bold white)"
 typechanged = ""
 # + mod -
 
 [c]
-format = "[  ](blue)"
+format = "[  ](#00599c)"
 
 [golang]
 format = "[  ](blue)"
 
 [lua]
-format = "[  ](blue)"
+format = "[  ](#2C2D72)"
 
 [python]
-format = "[  ](yellow)"
+format = "[  ](#3776AB)"
 
 [nodejs]
 format = "[󰎙  ](green)"
 
 [rust]
-format = "[  ](orange)"
+format = "[  ](#f46623)"
 
