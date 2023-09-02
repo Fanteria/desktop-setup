@@ -38,7 +38,7 @@ format = "[$symbol$branch](bold purple) "
 symbol = " "
 
 [git_commit]
-commit_hash_length = 7
+commit_hash_length = 5
 format = "[$hash ]($style)"
 style = "yellow"
 only_detached = false
@@ -48,20 +48,19 @@ disabled = false
 disabled = false
 
 [git_status]
-format = "$all_status "
-conflicted = "[=$count](bold white)"
-ahead = "[$count](bold white)"
-behind = "[$count](bold white)"
-diverged = "[󰹹$count](bold white)"
-up_to_date = "A$count"
-untracked = "[ $count](bold yellow)"
-stashed = "S$count"
+format = "$all_status$ahead_behind"
+conflicted = "[=$count](bold white) "
+ahead = "[$count](bold white) "
+behind = "[$count](bold white) "
+diverged = "[󰹹$count](bold white) "
+up_to_date = "A$count "
+untracked = "[ $count](bold yellow) "
+stashed = "S$count "
 modified = "[ $count](bold blue) "
 staged = "[ $count](bold green) "
-renamed = "[$count](bold white)"
-deleted = "[$count](bold white)"
+renamed = "[$count](bold white) "
+deleted = "[$count](bold white) "
 typechanged = ""
-# + mod -
 
 [c]
 format = "[  ](#00599c)"
