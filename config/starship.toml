@@ -1,6 +1,8 @@
-format = """ $username$hostname$directory$rust$golang$terraform$python$nodejs$c$lua$git_branch$git_status$git_commit$git_metrics$git_state
-$character
-"""
+format = """\
+$username$hostname$directory\
+$rust$golang$terraform$python$nodejs$c$lua\
+$git_branch$git_status$git_commit$git_metrics$git_state
+$character"""
 
 [username]
 style_user = "green bold"
