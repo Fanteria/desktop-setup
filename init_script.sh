@@ -28,5 +28,6 @@ find "${SCRIPT_DIR}" -iname "*rc" | while read FILE; do
   create_link "${HOME}/.$( basename $FILE )" "${FILE}"
 done
 
+create_link "${HOME}/.shortcut_autotyper.json" "shortcut_autotyper.json"
 link_recursively "${SCRIPT_DIR}/config" "${HOME}/.config"
 link_recursively "${SCRIPT_DIR}/cgdb" "${HOME}/.cgdb"

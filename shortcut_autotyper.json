@@ -1,0 +1,20 @@
+{
+  "combinations": {
+    "kr": "k2..7",
+    "nr": "nf S ns0..3 n D",
+    "ns": "n S"
+  },
+  "sequences": {
+    "b": "☺️",
+    "D": ".",
+    "h": "🤗",
+    "k": "😘",
+    "n": "ňuch",
+    "nf": "Ňuch",
+    "N": "\n",
+    "p": "🐧",
+    "s": "😄",
+    "S": " ",
+    "task": "[#<1>](http://redmine.aveco.com/issues/<1>)"
+  }
+}
