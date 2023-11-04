@@ -12,7 +12,6 @@ export EDITOR="/usr/bin/nvim"
 export VISUAL="/usr/bin/nvim"
 export HISTCONTROL=ignoreboth
 export HISTSIZE=2000
-export TERM=xterm
 export GOPATH="${HOME}/.go"
 
 # (cat ~/.cache/wal/sequences &)
