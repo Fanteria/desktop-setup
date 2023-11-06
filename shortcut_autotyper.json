@@ -1,6 +1,7 @@
 {
   "combinations": {
     "kr": "k2..7",
+    "hr": "h2..7",
     "nr": "nf S ns0..3 n D",
     "ns": "n S"
   },
