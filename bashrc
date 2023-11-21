@@ -18,6 +18,7 @@ export GOPATH="${HOME}/.go"
 
 alias h='history'
 alias j='jobs -l'
+alias g='git '
 alias ls='ls --color=auto'
 alias ll='ls --color=auto -lh'
 alias la='ls --color=auto -lha'
