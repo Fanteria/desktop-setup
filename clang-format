@@ -121,7 +121,7 @@ IncludeCategories:
     CaseSensitive:   false
 IncludeIsMainRegex: '(Test)?$'
 IncludeIsMainSourceRegex: ''
-IndentAccessModifiers: true
+IndentAccessModifiers: false
 IndentCaseLabels: true
 IndentCaseBlocks: true
 IndentExternBlock: Indent
