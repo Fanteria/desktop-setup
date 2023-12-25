@@ -42,3 +42,6 @@ lg3-specific = log --graph --abbrev-commit --decorate --format=format:'%C(bold b
 [diff]
   colorMoved = default
 
+[user]
+	email = jiri.alexandrovic@gmail.com
+	name = Jiří Alexandrovič
