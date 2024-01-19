@@ -5,20 +5,24 @@
 # If not running interactively, don't do anything
 [[ $- != *i* ]] && return
 
-eval "$(starship init bash)"
+if [ `command -v starship` ] ; then
+  eval "$(starship init bash)"
+fi
 
-export PATH="$PATH:/home/jirka/.cargo/bin"
+# VARIABLES
 export EDITOR="/usr/bin/nvim"
 export VISUAL="/usr/bin/nvim"
 export HISTCONTROL=ignoreboth
 export HISTSIZE=2000
 export GOPATH="${HOME}/.go"
 
-# (cat ~/.cache/wal/sequences &)
-
+# ALIASES
 alias h='history'
 alias j='jobs -l'
 alias g='git '
+alias s='status '
+alias a='add '
+alias ip='ip --color=auto'
 alias ls='ls --color=auto'
 alias ll='ls --color=auto -lh'
 alias la='ls --color=auto -lha'
@@ -32,21 +36,22 @@ alias egrep='egrep --color=auto'
 alias fgrep='fgrep --color=auto'
 alias icat='kitty +kitten icat'
 alias pingg='ping 8.8.8.8'
-alias school='cd /home/jirka/Projects/school/master/'
 alias backlight='sudo xbacklight -set '
-alias mountu='sudo mount -o uid=jirka,gid=users,fmask=113,dmask=002'
+alias mountu='sudo mount -o uid=$USER,gid=users,fmask=113,dmask=002'
 alias gdisksync='rclone sync /home/jirka/Music gdisk:/Music && rclone sync /home/jirka/Documents gdisk:/Documents && rclone sync /home/jirka/Pictures/Pictures gdisk:/Pictures/Pictures'
-alias tkitty='kitty --config ~/.config/kitty/transparent.conf'
 alias setEnv='export $(grep -v "^#" .env | xargs -d "\n")'
 alias unsetEnv='unset $(grep -v "^#" .env | sed -E "s/(.*)=.*/\1/" | xargs -d "\n")'
-alias markdown2latex='python ~/Projects/markdown-to-latex/main.py'
-alias gcalt='python ~/Projects/gcaltasks/gcaltasks/main.py'
-alias cc='clear && cargo check'
-alias cr='cargo run'
-alias ct='cargo test'
-alias ccc='clear && cargo clippy'
+if [ `command -v cargo` ] ; then
+  alias cc='clear && cargo check'
+  alias cr='cargo run'
+  alias ct='cargo test'
+  alias ccc='clear && cargo clippy'
+fi
 alias myIP='curl ifconfig.me && echo ""'
-alias view='nvim -R'
+if [ `command -v nvim` ] ; then
+  alias view='nvim -R'
+  alias vim='nvim'
+fi
 
 # FUNCTIONS
 testColors() {
@@ -104,6 +109,20 @@ git() {
   esac
 }
 
+function f {
+  find . -name "*${1}*" | tee >(xsel -ib)
+} 
+
+function fname {
+  find . -name "${1}*" | tee >(xsel -ib)
+}
+
+function fe {
+  find . -name "${1}" | tee >(xsel -ib)
+}
+
 # BEGIN_KITTY_SHELL_INTEGRATION
-if test -n "$KITTY_INSTALLATION_DIR" -a -e "$KITTY_INSTALLATION_DIR/shell-integration/bash/kitty.bash"; then source "$KITTY_INSTALLATION_DIR/shell-integration/bash/kitty.bash"; fi
+if test -n "$KITTY_INSTALLATION_DIR" -a -e "$KITTY_INSTALLATION_DIR/shell-integration/bash/kitty.bash"; then 
+  source "$KITTY_INSTALLATION_DIR/shell-integration/bash/kitty.bash"
+fi
 # END_KITTY_SHELL_INTEGRATION
