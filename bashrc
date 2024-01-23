@@ -15,6 +15,7 @@ export VISUAL="/usr/bin/nvim"
 export HISTCONTROL=ignoreboth
 export HISTSIZE=2000
 export GOPATH="${HOME}/.go"
+export LS_COLORS="$LS_COLORS:ow=1;31;102:"
 
 # ALIASES
 alias h='history'
