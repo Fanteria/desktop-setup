@@ -15,6 +15,9 @@ export VISUAL="/usr/bin/nvim"
 export HISTCONTROL=ignoreboth
 export HISTSIZE=2000
 export GOPATH="${HOME}/.go"
+
+# SET LS_COLORS
+eval "$(dircolors)"
 export LS_COLORS="$LS_COLORS:ow=1;31;102:"
 
 # ALIASES
@@ -68,6 +71,18 @@ for CODE in {000..255} ; do
   fi 
 done 
 echo -en "\e[0m"
+}
+
+testFonts() {
+  echo -e "none: Žluťoučký kůň pěl šílené dábelské ódy."
+  echo -e "\e[1mbold: Žluťoučký kůň pěl šílené dábelské ódy.\e[0m"
+  echo -e "\e[3mitalic: Žluťoučký kůň pěl šílené dábelské ódy.\e[0m"
+  echo -e "\e[3m\e[1mbold italic: Žluťoučký kůň pěl šílené dábelské ódy.\e[0m"
+  echo -e "\e[4munderline: Žluťoučký kůň pěl šílené dábelské ódy.\e[0m"
+  echo -e "\e[9mstrikethrough: Žluťoučký kůň pěl šílené dábelské ódy.\e[0m"
+  echo -e "\e[31mcolored: Žluťoučký kůň pěl šílené dábelské ódy.\e[0m"
+  echo -e "special characters: @ # & + $ % ^ * ( ) [ ] { }"
+  echo -e "lignatures: ft fi fj -> :: </tag> || &&"
 }
 
 git() {
