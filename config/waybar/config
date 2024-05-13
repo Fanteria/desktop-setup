@@ -145,7 +145,7 @@
   // CLOCK //
   "clock": {
     "tooltip-format": "{:%a %d/%m/%Y %H:%M }",
-    "format-alt": "{:%H:%M}"
+    "format": "{:%d.%m. %H:%M}",
   },
 
 }
