@@ -11,12 +11,12 @@
     color: @color-text;
     border: none;
     border-radius: 15px;
-    padding: 0px 2px;
-    background: transparent;
+    padding: 0px 0px;
 }
 
 window#waybar {
     padding: 0px;
+    background: transparent;
 }
 
 button {
@@ -34,7 +34,9 @@ button {
 }
 
 #workspaces button:hover {
-    background-color: @color-bg;
+    background: transparent;
+    border: 0px;
+    box-shadow: none;
 }
 
 #workspaces button.active {
@@ -47,9 +49,57 @@ button {
     background-color: @color-urgent;
 }
 
-#pulseaudio,
+#pulseaudio-slider slider {
+    min-height: 25px;
+    min-width: 15px;
+    box-shadow: none;
+    padding: 0px;
+    border: 2px solid @color-primary;
+    background: transparent;
+    background-color: @color-primary;
+}
+#pulseaudio-slider trough {
+    min-width: 100px;
+    min-height: 23px;
+    background: transparent;
+    padding: 0px 10px 0px 0px;
+}
+#pulseaudio-slider highlight {
+    background-color: rgba(100, 114, 109, 0.6);
+    padding: 0px;
+    border-radius: 15px 0px 0px 15px;
+}
+
+#custom-rclone {
+    min-width: 35px;
+    padding: 0px 0px 0px 3px;
+    background-color: rgba(100, 114, 109, 0.6);
+    border-radius: 15px;
+}
+
+#custom-rclone.passed {
+    border: 2px solid @color-primary;
+}
+
+#custom-rclone.failed {
+    border: 2px solid @color-urgent;
+    color: @color-urgent;
+}
+
+#cpu {
+    padding: 0px 5px 0px 12px;
+    border: 1px solid @color-primary;
+    border-width: 0px 1px 0px 0px;
+}
+
+#pulseaudio {
+    min-width: 110px;
+    padding: 0px 5px 0px 0px;
+    border: 1px solid @color-primary;
+    border-width: 0px 1px 0px 0px;
+}
+
 #network,
-#cpu,
 #memory,
 #disk {
     padding: 0px 5px;

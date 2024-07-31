@@ -9,7 +9,7 @@
   "height": 30,
   // "width": 1280,
   "spacing": 10,
-  "mode": "overlay",
+  "mode": "dock",
 
   ////////////////
   //// LAYOUT ////
@@ -17,13 +17,15 @@
 
   // Choose the order of the modules
   "modules-left": [
-    "hyprland/workspaces"
+    "hyprland/workspaces",
+    "custom/watson",
   ],
   "modules-center": [
-    "hyprland/window"
+    "hyprland/window",
   ],
   "modules-right": [
     "group/setup",
+    "custom/rclone",
     "group/hardware",
     "clock",
   ],
@@ -32,6 +34,7 @@
   "group/setup": {
     "orientation": "horizontal",
     "modules": [
+      "pulseaudio/slider",
       "pulseaudio",
       "network",
       "backlight",
@@ -50,6 +53,12 @@
   /////////////////
   //// MODULES ////
   /////////////////
+
+  "pulseaudio/slider": {
+      "min": 0,
+      "max": 120,
+      "orientation": "horizontal"
+  },
 
   "hyprland/workspaces": {
     // "disable-scroll": true,
@@ -99,8 +108,6 @@
     "on-click": "pavucontrol"
   },
   "network": {
-    // "interface": "wlp2*", // (Optional) To force the use of this interface
-    // "format-wifi": "{essid} ({signalStrength}%) ",
     "format-wifi": "{signalStrength}% ",
     "format-ethernet": "{ipaddr}/{cidr} ",
     "tooltip-format": "{ifname} via {gwaddr} ",
@@ -109,9 +116,13 @@
     "format-alt": "{ifname}: {ipaddr}/{cidr}"
   },
   "backlight": {
-    // "device": "acpi_video1",
     "format": "{percent}% {icon}",
-    "format-icons": ["", "", "", "", "", "", "", "", ""]
+    "format-icons": ["", "", "", "", "", "", "", "", ""],
+    "on-scroll-up": "backlight + 5",
+    "on-scroll-down": "backlight - 5",
+    "on-click": "backlight 100",
+    "on-click-right": "backlight 50",
+    "on-click-middle": "backlight 30",
   },
 
   // GROUP HARDWARE //
@@ -120,11 +131,15 @@
     "tooltip": false,
   },
   "memory": {
-    "format": "{avail:0.1f}/{used:0.1f}/{total:0.1f} GiB "
+    "format": "{percentage} % ",
+    "format-alt": "{avail:0.1f}/{used:0.1f}/{total:0.1f} GiB ",
+    "tooltip": true,
+    "tooltip-format": "Avaible: {avail:0.1f} / Used: {used:0.1f} / Total: {total:0.1f} GiB "
   },
   "disk": {
     "interval": 300,
-    "format": "{percentage_used}%/{total} ",
+    "format": "{percentage_used}% ",
+    "format-alt": "{percentage_used}%/{total} ",
     "path": "/home/jirka",
   },
   "battery": {
@@ -144,8 +159,50 @@
 
   // CLOCK //
   "clock": {
-    "tooltip-format": "{:%a %d/%m/%Y %H:%M }",
     "format": "{:%d.%m. %H:%M}",
+    "format-alt": "{:%H:%M}",
+    // "tooltip-format": "{:%a %d/%m/%Y %H:%M }",
+    "tooltip-format": "<tt><big>{calendar}</big></tt>",
+    "calendar": {
+                "mode"          : "year",
+                "mode-mon-col"  : 3,
+                "weeks-pos"     : "left",
+                "on-scroll"     : 1,
+                "format": {
+                          "months":     "<span color='#ffead3'>{}</span>",
+                          "days":       "<span color='#ecc6d9'>{}</span>",
+                          "weeks":      "<span color='#99ffdd'>{}</span>",
+                          "weekdays":   "<span color='#ffcc66'>{}</span>",
+                          "today":      "<span color='#ff6699'><b>{}</b></span>"
+                          }
+                },
+    "actions":  {
+                "on-click-right": "mode",
+                "on-click-forward": "tz_up",
+                "on-click-backward": "tz_down",
+                "on-scroll-up": "shift_up",
+                "on-scroll-down": "shift_down"
+                }
+  },
+
+  ////////////////
+  //// CUSTOM ////
+  ////////////////
+
+  "custom/watson": {
+    "exec": "~/.config/waybar/watson.sh",
+    "return-type": "json",
+    "on-click": "watson stop",
+    "restart-interval": 60,
+    "hide-empty-text": true,
+    "exec-on-event": true,
+  },
+
+  "custom/rclone": {
+      "exec": "~/.config/waybar/rclone-sync.py -p",
+      "return-type": "json",
+      "restart-interval": 600,
+      "exec-on-event": true,
   },
 
 }
