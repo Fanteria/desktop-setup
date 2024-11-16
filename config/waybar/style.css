@@ -26,6 +26,7 @@ button {
 
 #setup,
 #hardware,
+#apps,
 #clock,
 #workspaces {
     padding: 0px;
@@ -71,18 +72,10 @@ button {
 }
 
 #custom-rclone {
-    min-width: 35px;
-    padding: 0px 0px 0px 3px;
-    background-color: rgba(100, 114, 109, 0.6);
-    border-radius: 15px;
-}
-
-#custom-rclone.passed {
-    border: 2px solid @color-primary;
+    padding: 0px 0px 0px 5px;
 }
 
 #custom-rclone.failed {
-    border: 2px solid @color-urgent;
     color: @color-urgent;
 }
 
@@ -108,10 +101,13 @@ button {
 }
 
 #backlight,
+#tray,
 #battery {
     padding: 0px 5px;
     border: 0px;
 }
+
+
 
 #clock {
     padding: 0 15px;

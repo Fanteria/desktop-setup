@@ -25,7 +25,7 @@
   ],
   "modules-right": [
     "group/setup",
-    "custom/rclone",
+    "group/apps",
     "group/hardware",
     "clock",
   ],
@@ -38,6 +38,13 @@
       "pulseaudio",
       "network",
       "backlight",
+    ],
+  },
+  "group/apps": {
+    "orientation": "horizontal",
+    "modules": [
+      "custom/rclone",
+      "tray",
     ],
   },
   "group/hardware": {
@@ -123,6 +130,10 @@
     "on-click": "backlight 100",
     "on-click-right": "backlight 50",
     "on-click-middle": "backlight 30",
+  },
+
+  "tray": {
+      "spacing": 8,
   },
 
   // GROUP HARDWARE //
