@@ -1,20 +1,20 @@
 {
   "combinations": {
-    "kr": "k2..7",
-    "hr": "h2..7",
-    "nr": "nf S ns0..3 n D",
-    "ns": "n S"
+    "_kr": { "sequence": "k2..7", "delay": 500 },
+    "_hr": { "sequence": "h2..7" },
+    "_nr": { "sequence": "nf S ns0..3 n D" },
+    "ns": { "sequence": "n S " }
   },
   "sequences": {
-    "b": "☺️",
-    "D": ".",
-    "h": "🤗",
-    "k": "😘",
-    "n": "ňuch",
-    "nf": "Ňuch",
-    "N": "\n",
-    "p": "🐧",
-    "s": "😄",
+    "_b": "☺️",
+    "_D": ".",
+    "_h": "🤗",
+    "_k": "😘",
+    "_n": "ňuch",
+    "_nf": "Ňuch",
+    "_N": "\n",
+    "_p": "🐧",
+    "_s": "😄",
     "S": " ",
     "task": "[#<1>](http://redmine.aveco.com/issues/<1>)"
   }

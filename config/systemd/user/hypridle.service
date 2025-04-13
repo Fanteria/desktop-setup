@@ -1,0 +1,16 @@
+[Unit]
+Description=Hypridle locking handler
+# order startup after WM
+After=graphical-session.target
+
+[Service]
+Type=exec
+# Repurpose XDG Autostart filtering
+ExecCondition=/lib/systemd/systemd-xdg-autostart-condition "wlroots:sway:Wayfire:labwc:Hyprland" ""
+# assuming configuration file is used
+ExecStart=hypridle
+Restart=on-failure
+Slice=background-graphical.slice
+
+[Install]
+WantedBy=graphical-session.target
