@@ -28,9 +28,17 @@ find "${SCRIPT_DIR}" -maxdepth 1 -type f \
     ! -name "init_script.sh" \
     ! -name "LICENSE" \
     ! -name "README.md" \
+    ! -name "backlight.py" \
     | while read FILE; do 
   create_link "${HOME}/.$( basename $FILE )" "${FILE}"
 done
 
 link_recursively "${SCRIPT_DIR}/config" "${HOME}/.config"
 link_recursively "${SCRIPT_DIR}/cgdb" "${HOME}/.cgdb"
+
+# Add command
+ln -s ./backligh.py "$HOME/.local/bin"
+
+# Enable Hyprland sesrvices
+systemctl --user enable --now hyprpaper.service
+systemctl --user enable --now hypridle.service
