@@ -3,7 +3,7 @@
 #
 
 # Add Rust binaries to path
-PATH="$PATH:$HOME/.cargo/bin"
+PATH="$PATH:$HOME/.local/bin:$HOME/.cargo/bin"
 
 # If not running interactively, don't do anything
 [[ $- != *i* ]] && return
@@ -58,6 +58,7 @@ alias mountu='sudo mount -o uid=$USER,gid=users,fmask=113,dmask=002'
 alias gdisksync='rclone sync /home/jirka/Music gdisk:/Music && rclone sync /home/jirka/Documents gdisk:/Documents && rclone sync /home/jirka/Pictures/Pictures gdisk:/Pictures/Pictures'
 alias setEnv='export $(grep -v "^#" .env | xargs -d "\n")'
 alias unsetEnv='unset $(grep -v "^#" .env | sed -E "s/(.*)=.*/\1/" | xargs -d "\n")'
+alias vim='nvim'
 if [ `command -v cargo` ] ; then
   alias cc='clear && cargo check'
   alias cr='cargo run'

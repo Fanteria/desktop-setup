@@ -33,12 +33,17 @@ find "${SCRIPT_DIR}" -maxdepth 1 -type f \
   create_link "${HOME}/.$( basename $FILE )" "${FILE}"
 done
 
+mkdir -p "$HOME/.config"
 link_recursively "${SCRIPT_DIR}/config" "${HOME}/.config"
+mkdir -p "$HOME/.cgdb"
 link_recursively "${SCRIPT_DIR}/cgdb" "${HOME}/.cgdb"
 
 # Add command
-ln -s ./backligh.py "$HOME/.local/bin"
+mkdir -p "$HOME/.local/bin"
+rm -f "$HOME/.local/bin/backlight"
+ln -s "$PWD/backlight.py" "$HOME/.local/bin/backlight"
 
 # Enable Hyprland sesrvices
 systemctl --user enable --now hyprpaper.service
 systemctl --user enable --now hypridle.service
+systemctl --user enable --now waybar.service

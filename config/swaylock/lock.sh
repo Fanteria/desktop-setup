@@ -1,3 +1,0 @@
-#!/bin/bash
-
-swaylock --daemonize --screenshots --fade-in=1 --effect-blur=7x5 --indicator --clock --datestr "" --indicator-radius=500 --indicator-image ~/Pictures/Pictures/Wallpaper/screen_lock_ring.png --indicator-thickness 10 --ignore-empty-password --inside-color=00000000 --inside-clear-color=00000000 --inside-ver-color=00000000 --inside-wrong-color=00000000 --ring-color=EC5B3200 --ring-ver-color=FBD66EAA --key-hl-color=FBD66EAA --bs-hl-color=EC5B32 --font-size 100 --text-wrong "You shall not pass!" --text-wrong-color=EC5B32 --line-color=00000000 --text-ver "I see you" --text-ver-color=EC5B32 --line-ver-color=00000000 --line-wrong-color=00000000 --text-clear "My precious?" --text-clear-color=FBD66E
