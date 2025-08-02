@@ -2,9 +2,6 @@
 # ~/.bashrc
 #
 
-# Add Rust binaries to path
-PATH="$PATH:$HOME/.local/bin:$HOME/.cargo/bin"
-
 # If not running interactively, don't do anything
 [[ $- != *i* ]] && return
 
