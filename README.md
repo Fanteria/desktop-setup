@@ -2,22 +2,18 @@
 
 This repository contains config files for my desktop window manager and few another applications for desktop ricing. As window manager is used [i3wm](https://i3wm.org) and full list of all configured files and applications is below.
 
-## Configuration files
+## Required
 
-- `.bashrc`
-- `.xinitrc`
-
-## Aplications configs
-
-- `.vimrc`
-- `btop`
-- `flameshot`
+- `hyprland`
+- `hyprpaper`
+- `hypridle`
+- `hyprlock`
+- `waybar`
+- `uwsm`
+- `kitty` (_terminal_)
+- `nemo` (_file explorer_)
+- `rofi` (_menu_)
 - `keepmenu`
-- `i3`
-- `kitty`
-- `ncspot`
-- `powerline`
-- `ranger`
-- `redshift` (_is without lon and lat_)
-- `rofi`
-- `picom`
+- `grip`
+- `slurp`
+- `btop`
