@@ -15,5 +15,5 @@ This repository contains config files for my desktop window manager and few anot
 - `rofi` (_menu_)
 - `keepmenu`
 - `grip`
-- `slurp`
+- `slurp` (_image viewer_)
 - `btop`
