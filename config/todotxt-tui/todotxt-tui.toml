@@ -1,8 +1,8 @@
 active_color = "Red"
 init_widget = "List"
 window_title = "ToDo tui"
-todo_path = "/home/jirka/Documents/todo/todo.txt"
-archive_path = "/home/jirka/Documents/todo/archive.txt"
+todo_path = "$HOME/Documents/todo/todo.txt"
+archive_path = "$HOME/Documents/todo/archive.txt"
 # save_state_path = "/home/jirka/aux.toml"
 wrap_preview = true
 log_file = "log.log"
