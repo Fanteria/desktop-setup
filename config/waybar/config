@@ -170,7 +170,7 @@
 
   // CLOCK //
   "clock": {
-    "format": "{:%d.%m. %H:%M}",
+    "format": "{:%d.%m.%Y %H:%M}",
     "format-alt": "{:%H:%M}",
     // "tooltip-format": "{:%a %d/%m/%Y %H:%M }",
     "tooltip-format": "<tt><big>{calendar}</big></tt>",
