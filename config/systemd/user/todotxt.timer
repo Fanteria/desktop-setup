@@ -1,5 +1,5 @@
 [Unit]
-Description=Synchronize TODO list
+Description=Synchronize TODO list every 10 minutes
 
 [Timer]
 OnBootSec=5min

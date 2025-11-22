@@ -1,11 +1,12 @@
 [Unit]
-Description=Synchronize calendars and contacts
+Description=Synchronize documents pictures and music
 After=network-online.target
 Wants=network-online.target
 
 [Service]
 Type=oneshot
-ExecStart=/usr/bin/rclone copy --exclude=~/Documents/todo/** ~/Documents/ gdisk:/Documents
-ExecStart=/usr/bin/rclone copy ~/Pictures/Pictures gdisk:/Pictures/Pictures
-ExecStart=/usr/bin/rclone copy ~/Music gdisk:/Music
+ExecStart=/usr/bin/rclone copy -v --exclude=%h/Documents/todo/** %h/Documents/ gdisk:/Documents
+ExecStart=/usr/bin/rclone copy -v %h/Pictures/Pictures gdisk:/Pictures/Pictures
+StandardOutput=journal
+StandardError=journal
 

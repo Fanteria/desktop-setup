@@ -6,3 +6,5 @@ Wants=network-online.target
 [Service]
 Type=oneshot
 ExecStart=/usr/bin/vdirsyncer sync
+StandardOutput=journal
+StandardError=journal

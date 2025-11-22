@@ -5,5 +5,7 @@ Wants=network-online.target
 
 [Service]
 Type=oneshot
-ExecStart=/usr/bin/rclone bisync --force ~/Documents/todo gdisk:/Documents/todo
+ExecStart=/usr/bin/rclone bisync -v --force %h/Documents/todo gdisk:/Documents/todo
+StandardOutput=journal
+StandardError=journal
 
