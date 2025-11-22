@@ -1,0 +1,9 @@
+[Unit]
+Description=Synchronize todo list
+After=network-online.target
+Wants=network-online.target
+
+[Service]
+Type=oneshot
+ExecStart=/usr/bin/rclone bisync --force ~/Documents/todo gdisk:/Documents/todo
+
