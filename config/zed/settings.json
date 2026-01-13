@@ -7,12 +7,22 @@
 // custom settings, run `zed: open default settings` from the
 // command palette (cmd-shift-p / ctrl-shift-p)
 {
+  "agent": {
+    "default_model": {
+      "provider": "copilot_chat",
+      "model": "gpt-5-mini"
+    },
+    "model_parameters": []
+  },
+  "edit_predictions": {
+    "mode": "eager"
+  },
   "vim_mode": true,
   "ui_font_size": 15,
-  "buffer_font_size": 15,
+  "buffer_font_size": 13.5,
   "theme": {
     "mode": "system",
-    "light": "Ayu Dark",
+    "light": "One Light",
     "dark": "One Dark"
   },
   "buffer_font_family": "Fira Code",
@@ -66,5 +76,20 @@
     //     }
     //   }
     // }
+  },
+  "file_types": {
+    "Perl": ["SMakefile"]
+  },
+  "dap": {
+    "GDB": {
+      "binary": "/usr/bin/gdb",
+      "args": [
+        "--interpreter=dap",
+        "-ex",
+        "file /workdir/media-mgmt/agent/divarchive.json/test/runtest",
+        "-ex",
+        "target remote localhost:2345"
+      ]
+    }
   }
 }

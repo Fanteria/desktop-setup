@@ -15,6 +15,8 @@
   {
     "context": "Editor",
     "bindings": {
+      "ctrl-tab": "pane::ActivateNextItem",
+      "ctrl-shift-tab": "pane::ActivatePreviousItem"
       // "j k": ["workspace::SendKeystrokes", "escape"]
     }
   },
@@ -26,14 +28,17 @@
       "space h": "workspace::ActivatePaneLeft",
       "space k": "workspace::ActivatePaneUp",
       "space j": "workspace::ActivatePaneDown",
-      "ctrl-l": "terminal_panel::ToggleFocus"
+      "ctrl-l": "terminal_panel::ToggleFocus",
+      "g a": "editor::ToggleCodeActions"
     }
   },
   {
     "context": "ProjectPanel",
     "bindings": {
       "space e": "workspace::ToggleLeftDock",
-      "space l": "workspace::ActivatePaneRight"
+      "space l": "workspace::ActivatePaneRight",
+      "a": "project_panel::NewFile",
+      "A": "project_panel::NewDirectory"
     }
   },
   {
