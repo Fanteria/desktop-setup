@@ -81,7 +81,7 @@
       "4": "",
       "5": "",
       "6": "",
-      "7": "🎸",
+      "7": "󰋄",
       "8": "",
       "9": "",
       "10": "",
@@ -97,7 +97,7 @@
   // GROUP SETUP //
   "pulseaudio": {
     // "scroll-step": 1, // %, can be a float
-    "format": "{volume}% {icon} {format_source}",
+    "format": "{volume}% {icon}  {format_source}",
     "format-muted": "0%  {format_source}",
     "format-bluetooth": "{volume}% {icon} {format_source}",
     "format-bluetooth-muted": "0% {icon} {format_source}",
@@ -115,15 +115,15 @@
     "on-click": "pavucontrol"
   },
   "network": {
-    "format-wifi": "{signalStrength}% ",
-    "format-ethernet": "{ipaddr}/{cidr} ",
-    "tooltip-format": "{ifname} via {gwaddr} ",
-    "format-linked": "{ifname} (No IP) ",
-    "format-disconnected": "Disconnected ⚠",
+    "format-wifi": "{signalStrength}%  ",
+    "format-ethernet": "{ipaddr}/{cidr}  ",
+    "tooltip-format": "{ifname} via {gwaddr}",
+    "format-linked": "{ifname} (No IP) 󱚵 ",
+    "format-disconnected": "Disconnected 󰖪 ",
     "format-alt": "{ifname}: {ipaddr}/{cidr}"
   },
   "backlight": {
-    "format": "{percent}% {icon}",
+    "format": "{percent}% {icon} ",
     "format-icons": ["", "", "", "", "", "", "", "", ""],
     "on-scroll-up": "backlight + 5",
     "on-scroll-down": "backlight - 5",
@@ -138,14 +138,14 @@
 
   // GROUP HARDWARE //
   "cpu": {
-    "format": "{usage} % ",
+    "format": "{usage} %  ",
     "tooltip": false,
   },
   "memory": {
-    "format": "{percentage} % ",
-    "format-alt": "{avail:0.1f}/{used:0.1f}/{total:0.1f} GiB ",
+    "format": "{percentage} %  ",
+    "format-alt": "{avail:0.1f}/{used:0.1f}/{total:0.1f} GiB  ",
     "tooltip": true,
-    "tooltip-format": "Avaible: {avail:0.1f} / Used: {used:0.1f} / Total: {total:0.1f} GiB "
+    "tooltip-format": "Avaible: {avail:0.1f} / Used: {used:0.1f} / Total: {total:0.1f} GiB  "
   },
   "disk": {
     "interval": 300,
@@ -159,7 +159,7 @@
       "warning": 30,
       "critical": 15
     },
-    "format": "{capacity}% {icon}",
+    "format": "{capacity}% {icon} ",
     "format-charging": "{capacity}% ",
     "format-plugged": "{capacity}% ",
     "format-alt": "{time} {icon}",
