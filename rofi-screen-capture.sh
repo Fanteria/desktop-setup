@@ -27,7 +27,8 @@ screenshot full
 $(jq -r '.[]["name"] | "screenshot \(.)"' <<< "$MONITORS")
 record selection
 record active window
-$(jq -r '.[]["name"] | "record \(.)"' <<< "$MONITORS")")
+$(jq -r '.[]["name"] | "record \(.)"' <<< "$MONITORS")
+flameshot")
 
 IMG="${HOME}/Pictures/Screenshots/$(date +%Y-%m-%d_%H-%M-%S).png"
 VID="${HOME}/Videos/Recordings/$(date +%Y-%m-%d_%H-%M-%S).mp4"
@@ -74,6 +75,9 @@ case "$SELECTION" in
 		echo "$VID" > /tmp/recording.txt
 		wf-recorder -a -o "$(cut -d' ' -f2- <<< "$SELECTION")" -f "$VID" &>/dev/null
 		;;
+  "flameshot")
+    flameshot gui
+    ;;
   *)
     ;;
 esac
