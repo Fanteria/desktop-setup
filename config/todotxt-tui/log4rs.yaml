@@ -2,11 +2,11 @@ refresh_rate: 30 seconds
 appenders:
   file:
     kind: file
-    path: "log.log"
+    path: "/home/jiri/.cache/todotxt/log.log"
     encoder:
       pattern: "{d(%Y-%m-%d %H:%M:%S)} {M} [{l}] {m}{n}"
 
 root:
-  level: trace
+  level: info
   appenders:
     - file
