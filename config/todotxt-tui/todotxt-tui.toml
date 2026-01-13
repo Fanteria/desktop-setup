@@ -33,8 +33,7 @@ layout = """
         Contexts,
         Projects,
       ],
-      Preview: 10%,
-      Preview: 10%,
+      Preview: 20%,
     ],
 ]
 """
@@ -61,7 +60,7 @@ nanos = 0
 fg = "LightBlue"
 
 [projects_style]
-fg = "9"
+fg = "2"
 
 [contexts_style]
 
