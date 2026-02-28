@@ -7,30 +7,46 @@
 // from the command palette.
 [
   {
+    "bindings": {
+      "ctrl-n": null,
+    },
+  },
+  {
     "context": "Workspace",
     "bindings": {
       // "shift shift": "file_finder::Toggle"
-    }
+    },
   },
   {
     "context": "Editor",
     "bindings": {
       "ctrl-tab": "pane::ActivateNextItem",
-      "ctrl-shift-tab": "pane::ActivatePreviousItem"
+      "ctrl-shift-tab": "pane::ActivatePreviousItem",
       // "j k": ["workspace::SendKeystrokes", "escape"]
-    }
+    },
   },
   {
-    "context": "Editor && vim_mode == normal",
+    "context": "vim_mode == normal",
+    "bindings": {
+      "ctrl-q": null,
+    },
+  },
+  {
+    "context": "Editor && (vim_mode == normal || vim_mode == visual)", // mode == full
     "bindings": {
       "space e": "project_panel::ToggleFocus",
       "space l": "workspace::ActivatePaneRight",
       "space h": "workspace::ActivatePaneLeft",
       "space k": "workspace::ActivatePaneUp",
       "space j": "workspace::ActivatePaneDown",
-      "ctrl-l": "terminal_panel::ToggleFocus",
-      "g a": "editor::ToggleCodeActions"
-    }
+      "ctrl-j": "terminal_panel::ToggleFocus",
+      "g a": "editor::ToggleCodeActions",
+      "space shift-f": "pane::DeploySearch",
+      "ctrl-shift-g": "git_panel::ToggleFocus",
+      "space g l": "editor::BlameHover",
+      "ctrl-shift-a": "agent::ToggleFocus",
+      "space w": "workspace::Save",
+    },
   },
   {
     "context": "ProjectPanel",
@@ -38,13 +54,45 @@
       "space e": "workspace::ToggleLeftDock",
       "space l": "workspace::ActivatePaneRight",
       "a": "project_panel::NewFile",
-      "A": "project_panel::NewDirectory"
-    }
+      "A": "project_panel::NewDirectory",
+    },
   },
   {
     "context": "Terminal",
     "bindings": {
-      "ctrl_l": "terminal_panel::ToggleFocus"
-    }
-  }
+      "ctrl-shift-j": "terminal_panel::ToggleFocus",
+      "ctrl-j": "terminal_panel::Toggle",
+    },
+  },
+  {
+    "context": "GitPanel",
+    "bindings": {
+      "ctrl-shift-g": "workspace::ToggleLeftDock",
+    },
+  },
+  {
+    "context": "AgentPanel",
+    "bindings": {
+      "ctrl-shift-a": "workspace::ToggleRightDock",
+    },
+  },
+  {
+    "context": "AgentDiff",
+    "bindings": {
+      "ctrl-y": "agent::Keep",
+      "ctrl-n": "agent::Reject",
+      "ctrl-shift-y": "agent::KeepAll",
+      "ctrl-shift-n": "agent::RejectAll",
+    },
+  },
+  {
+    "context": "Editor && editor_agent_diff",
+    "bindings": {
+      "ctrl-y": "agent::Keep",
+      "ctrl-n": "agent::Reject",
+      "ctrl-shift-y": "agent::KeepAll",
+      "ctrl-shift-n": "agent::RejectAll",
+      "ctrl-shift-r": "agent::OpenAgentDiff",
+    },
+  },
 ]

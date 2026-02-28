@@ -8,14 +8,19 @@
 // command palette (cmd-shift-p / ctrl-shift-p)
 {
   "agent": {
+    "inline_assistant_model": {
+      "provider": "copilot_chat",
+      "model": "claude-haiku-4.5",
+    },
     "default_model": {
       "provider": "copilot_chat",
-      "model": "gpt-5-mini"
+      "model": "claude-haiku-4.5",
     },
-    "model_parameters": []
+    "favorite_models": [],
+    "model_parameters": [],
   },
   "edit_predictions": {
-    "mode": "eager"
+    "mode": "eager",
   },
   "vim_mode": true,
   "ui_font_size": 15,
@@ -23,36 +28,36 @@
   "theme": {
     "mode": "system",
     "light": "One Light",
-    "dark": "One Dark"
+    "dark": "One Dark",
   },
   "buffer_font_family": "Fira Code",
   "buffer_font_weight": 450,
   "buffer_line_height": "standard",
   "scrollbar": {
-    "show": "never"
+    "show": "never",
   },
-  "relative_line_numbers": true,
+  "relative_line_numbers": "enabled",
   "use_smartcase_search": true,
   "tab_bar": {
-    "show_nav_history_buttons": false
+    "show_nav_history_buttons": false,
   },
   "tabs": {
     "git_status": true,
     "file_icons": true,
-    "show_diagnostics": "all"
+    "show_diagnostics": "all",
   },
   "outline_panel": {
     "button": true,
     "dock": "right",
     "scrollbar": {
-      "show": "auto"
-    }
+      "show": "auto",
+    },
   },
   "tab_size": 2,
   "git": {
     "inline_blame": {
-      "enabled": false
-    }
+      "enabled": false,
+    },
   },
   "diagnostics": {
     "include_warnings": true,
@@ -61,12 +66,12 @@
       "update_debounce_ms": 150,
       "padding": 4,
       "min_column": 0,
-      "max_severity": null
-    }
+      "max_severity": null,
+    },
   },
   "project_panel": {
     "hide_gitignore": true,
-    "button": true
+    "button": true,
   },
   "lsp": {
     // "haprer-ls": {
@@ -78,7 +83,7 @@
     // }
   },
   "file_types": {
-    "Perl": ["SMakefile"]
+    "Perl": ["SMakefile"],
   },
   "dap": {
     "GDB": {
@@ -88,8 +93,8 @@
         "-ex",
         "file /workdir/media-mgmt/agent/divarchive.json/test/runtest",
         "-ex",
-        "target remote localhost:2345"
-      ]
-    }
-  }
+        "target remote localhost:2345",
+      ],
+    },
+  },
 }
