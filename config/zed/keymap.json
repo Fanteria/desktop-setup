@@ -8,28 +8,28 @@
 [
   {
     "bindings": {
-      "ctrl-n": null,
-    },
+      "ctrl-n": null
+    }
   },
   {
     "context": "Workspace",
     "bindings": {
       // "shift shift": "file_finder::Toggle"
-    },
+    }
   },
   {
     "context": "Editor",
     "bindings": {
       "ctrl-tab": "pane::ActivateNextItem",
-      "ctrl-shift-tab": "pane::ActivatePreviousItem",
+      "ctrl-shift-tab": "pane::ActivatePreviousItem"
       // "j k": ["workspace::SendKeystrokes", "escape"]
-    },
+    }
   },
   {
     "context": "vim_mode == normal",
     "bindings": {
-      "ctrl-q": null,
-    },
+      "ctrl-q": null
+    }
   },
   {
     "context": "Editor && (vim_mode == normal || vim_mode == visual)", // mode == full
@@ -49,7 +49,29 @@
       "space g s": "git::ToggleStaged",
       "ctrl-shift-a": "agent::ToggleFocus",
       "space w": "workspace::Save",
-    },
+      "g l": null
+    }
+  },
+  {
+    "context": "Editor && (vim_mode == normal || vim_mode == visual) && mode == full",
+    "bindings": {
+      "ctrl-shift-a": "agent::ToggleFocus",
+      "space f": "editor::Format",
+      "space shift-t shift-r": "task::Rerun",
+      "space shift-t shift-s": "task::Spawn"
+    }
+  },
+  {
+    "context": "Editor && vim_mode == visual && mode == full",
+    "bindings": {
+      "space f": "editor::FormatSelections"
+    }
+  },
+  {
+    "context": "Editor && vim_mode == normal && mode == full",
+    "bindings": {
+      "space f": "editor::Format"
+    }
   },
   {
     "context": "ProjectPanel",
@@ -57,27 +79,27 @@
       "space e": "workspace::ToggleLeftDock",
       "space l": "workspace::ActivatePaneRight",
       "a": "project_panel::NewFile",
-      "A": "project_panel::NewDirectory",
-    },
+      "A": "project_panel::NewDirectory"
+    }
   },
   {
     "context": "Terminal",
     "bindings": {
       "ctrl-shift-j": "terminal_panel::ToggleFocus",
-      "ctrl-j": "terminal_panel::Toggle",
-    },
+      "ctrl-j": "terminal_panel::Toggle"
+    }
   },
   {
     "context": "GitPanel",
     "bindings": {
-      "ctrl-shift-g": "workspace::ToggleLeftDock",
-    },
+      "ctrl-shift-g": "workspace::ToggleLeftDock"
+    }
   },
   {
     "context": "AgentPanel",
     "bindings": {
-      "ctrl-shift-a": "workspace::ToggleRightDock",
-    },
+      "ctrl-shift-a": "workspace::ToggleRightDock"
+    }
   },
   {
     "context": "AgentDiff",
@@ -85,8 +107,8 @@
       "ctrl-y": "agent::Keep",
       "ctrl-n": "agent::Reject",
       "ctrl-shift-y": "agent::KeepAll",
-      "ctrl-shift-n": "agent::RejectAll",
-    },
+      "ctrl-shift-n": "agent::RejectAll"
+    }
   },
   {
     "context": "Editor && editor_agent_diff",
@@ -95,7 +117,7 @@
       "ctrl-n": "agent::Reject",
       "ctrl-shift-y": "agent::KeepAll",
       "ctrl-shift-n": "agent::RejectAll",
-      "ctrl-shift-r": "agent::OpenAgentDiff",
-    },
-  },
+      "ctrl-shift-r": "agent::OpenAgentDiff"
+    }
+  }
 ]
